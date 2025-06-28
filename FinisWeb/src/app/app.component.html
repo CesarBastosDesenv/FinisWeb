@@ -1,0 +1,69 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light bg-custom-2 p-3">
+  <a class="navbar-brand text-white" href="#"><b>FINIS</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse text-white" id="navbarNavDropdown">
+    <ul class="navbar-nav text-white">
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="">DASHBOARD <span class="sr-only">(Página atual)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link text-white" href="/visualizarCarteira">CARTEIRA </a>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          DESPESAS
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/CadastrarVeiculo">Cadastro de Veículos</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          EMPRESTIMOS
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/CadastrarVeiculo">Cadastro de Veículos</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ROBÔS
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/CadastrarVeiculo">Cadastro de Veículos</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          RELATÓRIOS
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/CadastrarVeiculo">Cadastro de Veículos</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          ADMINISTRAÇÃO
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item disabled" href="#">Finis</a>
+          <a class="dropdown-item" href="/visualizarTipo">Cadastro de Tipos</a>
+          <a class="dropdown-item disabled" href="/CadastrarVeiculo">Despesas</a>
+
+         
+
+        </div>
+      </li>
+    
+    </ul>
+  </div>
+</nav>
+
+<section>
+<div class="container-fluid">
+ 
+  <router-outlet></router-outlet>  
+</div>
+</section>

@@ -1,0 +1,10 @@
+.nav-pills .nav-link {
+    background-color: #FFFFFF; /* Cor de fundo padrão */
+    color: #495057; /* Cor do texto padrão */
+  }
+
+  .nav-pills .nav-link.active,
+  .nav-pills .show > .nav-link {
+    background-color: #666666; /* Cor azul */
+    color: white; /* Cor do texto */
+  }

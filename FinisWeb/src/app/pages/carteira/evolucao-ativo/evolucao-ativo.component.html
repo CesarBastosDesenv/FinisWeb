@@ -1,0 +1,186 @@
+<div class="container-md">
+    <div class="row">
+        <div class="col-sm-12 my-3">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h3 class="my-3"> Rendimentos do ativo <b>[Ativo] </b> Ano [Ano] </h3>
+                </div>
+                <div class="col-sm-6">
+                    <div class="float-right">
+                        <div class="card bg-custom-2">
+                            <div class="card-body text-white">
+                                Total de Rendimento do Ano R$ [Valor]
+                            </div>
+                        </div>
+                    </div>   
+                </div>
+            </div>
+            <hr>
+        </div>
+        <div class="col-sm-12 my-2">
+            <div class="row">
+                <div class="col-3">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                      <a class="nav-link active text-secondary" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Histórico</a>
+                      <a class="nav-link text-secondary" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Dividendos - Ano</a>
+                      <a class="nav-link text-secondary" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Dividendos - Histórico</a>
+                      <a class="nav-link text-secondary" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Indicadores</a>
+                    </div>
+                </div>
+                <div class="col-9">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <form >
+                                <div class="row">
+                                    <div class="shadow p-3 mb-5 bg-white rounded">
+                                         <div class="col-sm-12">
+                                            <label>Descrição</label>
+                                            <textarea class="form-control"  rows="2"></textarea>
+                                          </div>
+                                          <div class="my-3"> 
+                                            <button type="button" class="btn btn-outline-secondary" >Salvar</button>
+                                           </div>
+                                    </div>       
+                                </div>
+                            </form>
+                            <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Primeiro</th>
+                                    <th scope="col">Último</th>
+                                    <th scope="col">Nickname</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>mdo</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>fat</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>twitter</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="tab-pane fade " id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                            <table class="table table-hover">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Primeiro</th>
+                                    <th scope="col">Último</th>
+                                    <th scope="col">Nickname</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>mdo</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>fat</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>twitter</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                        </div>
+                        <div class="tab-pane fade " id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                             [Grafico]
+                        </div>
+                        <div class="tab-pane fade " id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                            <div class="row mbr-justify-content-center">
+                                <div class="col-lg-6 mbr-col-md-10">
+                                    <div class="wrap">
+                                        <div class="ico-wrap">
+                                            <fa-icon style="font-size: 60px;" [icon] ="faHandHoldingUsd"></fa-icon>
+                                        </div>
+                                        <div class="text-wrap vcenter">
+                                            <h3 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Total  <span>Recebido</span></h3>
+                                            <p class="mbr-fonts-style text1 mbr-text display-6"> Total de rendimentos pago pelo ativo foi de R$ [Valor] </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 mbr-col-md-10">
+                                    <div class="wrap">
+                                        <div class="ico-wrap">
+                                            <fa-icon style="font-size: 60px;" [icon] ="faFlagCheckered"></fa-icon>
+                                        </div>
+                                        <div class="text-wrap vcenter">
+                                            <h3 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Meta 
+                                                <span>de cotas</span>
+                                            </h3>
+                                            <p class="mbr-fonts-style text1 mbr-text display-6"> 
+                                                Deverão ser adquiridas aproximandamente [ X ] cotas
+                                
+                                            
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 mbr-col-md-10">
+                                    <div class="wrap">
+                                        <div class="ico-wrap">
+                                            <fa-icon style="font-size: 60px;" [icon] ="faShareSquare"></fa-icon>
+                                        </div>
+                                        <div class="text-wrap vcenter">
+                                            <h3 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Valor <span>Real</span></h3>
+                                            <p class="mbr-fonts-style text1 mbr-text display-6">Hoje as cotas valem um total de R$ [ X ]</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 mbr-col-md-10">
+                                    <div class="wrap">
+                                        <div class="ico-wrap">
+                                            <fa-icon style="font-size: 60px;" [icon] ="faReplyAll"></fa-icon>
+                                        </div>
+                                        <div class="text-wrap vcenter">
+                                            <h3 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5"> <span>Paybabk</span></h3>
+                                            <p class="mbr-fonts-style text1 mbr-text display-6">Faltam ainda a ser resgatados R$ [x]</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-6 mbr-col-md-10">
+                                    <div class="wrap">
+                                        <div class="ico-wrap">
+                                            <fa-icon style="font-size: 60px;" [icon] ="faMoneyBillAlt"></fa-icon>
+                                        </div>
+                                        <div class="text-wrap vcenter">
+                                            <h3 class="mbr-fonts-style mbr-bold mbr-section-title3 display-5">Valor
+                                                <span>Gasto</span>
+                                            </h3>
+                                            <p class="mbr-fonts-style text1 mbr-text display-6"> Foram aportados o total de R$ [x]</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </div>
+</div>    

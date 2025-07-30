@@ -1,0 +1,161 @@
+  
+    <div class="row">
+        <div class="col-sm-4 my-3" > 
+            <h3 >Contas do mês corrente</h3>
+           
+        </div>
+        <div class="col-sm-8 my-3">
+            <div class="float-right">
+                 
+               ver o que colocar
+           
+         
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-sm-3 my-3 text-center" > 
+            <div class="card">
+                <h5 class="card-header">Receita Mensal</h5>
+                <div class="card-body">
+                  <h3 class="card-title text-success"> + 10.000,00</h3>
+                  [Colocar um gráfico com todas as dispesas]
+                </div>
+              </div>
+        </div>
+        <div class="col-sm-3 my-3 text-center" > 
+            <div class="card">
+                <h5 class="card-header">Despesa Mensal</h5>
+                <div class="card-body">
+                    <h3 class="card-title text-success"> - 5.000,00</h3>
+                    [Colocar um gráfico com todas as dispesas]
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-3 my-3 text-center" > 
+                <div class="card">
+                    <h5 class="card-header">Saldo</h5>
+                    <div class="card-body">
+                        <h3 class="card-title text-success"> + 5.000,00</h3>
+                        
+                          <fa-icon style="font-size: 20px;" [icon] ="faMoneyBillWave"></fa-icon>
+                     
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-3 my-3 text-center" > 
+                    <div class="card">
+                        <h5 class="card-header">Receita vs Depesa</h5>
+                        <div class="card-body">
+                        Colocar um grafico de linha
+                        </div>
+                      </div>
+                    </div>
+    </div>        
+
+    <div class="row">
+        <div class="col-sm-6 my-3" > 
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                
+                <div class="row">
+                    <div class="col-sm-4" > 
+                        <h6>Contas</h6>
+                       
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="float-right">
+                             
+                           <button class="btn btn-outline-secondary" onclick="abrirModal()"> Cadastrar Conta</button>
+                    
+                        </div>
+                  
+                </div>
+             
+            </div>
+            <hr>   
+              
+               
+                <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th>Opções</th>
+                        <th>Nome Conta</th>
+                        <th>Valor saldo</th>
+                       
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let item of listacontas">
+                        <th>
+                          <a [routerLink]="['/EditarContas',item.id]" class="btn btn-outline-secondary btn-sm m-1"> <fa-icon style="font-size: 13px;" [icon] ="faEdit"></fa-icon> </a>
+                        </th>
+                        <td>{{item.nomeConta}}</td>
+                        <td>{{item.valorSaldo}}</td>
+                     </tr>
+                     
+                    </tbody>
+                  </table>
+                  <ngb-pagination 
+      [collectionSize]="TotalLista"
+      (pageChange)="pageChange($event)"
+      [maxSize]="5"
+      [rotate]="true"
+      [ellipses]="false"
+      [pageSize]="PageSize"
+      [boundaryLinks]="true">
+    </ngb-pagination>
+            </div>
+        </div>  
+        <div class="col-sm-6 my-3" > 
+            <div class="shadow p-3 mb-5 bg-white rounded">
+                <div class="row">
+                    <div class="col-sm-4" > 
+                        <h6>Histórico de movimentações</h6>
+                       
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="float-right">
+                             
+                            <a href="/visualizarCarteira" class="btn btn-outline-secondary btn-sm ">
+                                Adicionar movimentações
+                            </a>
+                    
+                        </div>
+                  
+                </div>
+             
+            </div>
+            <hr>   
+              
+                <table class="table table-borderless">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Primeiro</th>
+                        <th scope="col">Último</th>
+                        <th scope="col">Nickname</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th scope="row">1</th>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>mdo</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">2</th>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>fat</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">3</th>
+                        <td colspan="2">Larry the Bird</td>
+                        <td>twitter</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>    
+    </div>    

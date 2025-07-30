@@ -1,65 +1,72 @@
-<div class="shadow-lg p-3 mb-5 my-4 mr-3 ml-3 bg-white rounded">
+<div class="container">
+  <div class="shadow-lg p-3 mb-5 my-4 mr-3 ml-3 bg-white rounded">
   <div class="row">
      
-    <div class="col-sm-8" > 
+    <div class="col-sm-4" > 
         <h3 > Carteira de Investimento </h3>
     </div>
-    <div class="col-sm-4 ">
+    <div class="col-sm-8 ">
         <div class="float-right">
-            <a href="/CadastrarOs" class="btn btn-outline-secondary btn-sm mr-1">
+            <a href="/novoAtivo" class="btn btn-outline-secondary btn-sm mr-1">
               <fa-icon style="font-size: 18px;" [icon] ="faPlusCircle"></fa-icon> Compra de Novos Ativos
                 
             </a>
-            <a href="/CadastrarOs" class="btn btn-outline-secondary btn-sm">
+            <a href="/ativoCadastrado" class="btn btn-outline-secondary btn-sm">
               <fa-icon style="font-size: 18px;" [icon] ="faPlusCircle"></fa-icon> Compra de Ativos Cadastrados
             </a>
         </div>  
      </div>
-    <div class="col-sm-12"><hr></div>
+     
     
   </div>
-  <div class="row">
-  
-        <div class="col-3">
-          <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">NASDAQ</a>
-            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">AÇÕES B3</a>
-            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">FUNDOS IMOBILIÁRIOS</a>
-            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">TESOURO DIRETO</a>
-            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings1" role="tab" aria-controls="v-pills-settings" aria-selected="false">CDB/FUNDOS</a>
-            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings2" role="tab" aria-controls="v-pills-settings" aria-selected="false">MOEDAS DIGITAIS</a>
-        </div>
-        </div>
-        <div class="col-9">
-          <div class="tab-content" id="v-pills-tabContent">
-            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-              <div class="shadow-sm p-3 mb-2 bg-white rounded">
-                <div class="row">
-                  <div class="col-sm-3">
-                      IMG + Nome
-                  </div>
-                  <div class="col-sm-3">
-                    preço medio preco atual
-                  </div>
-                  <div class="col-sm-3">
-                    Quantidade / setor
-                  </div>
-                  <div class="col-sm-3">
-                    botões
-                  </div>
-                </div>
-              </div>
-              <div class="shadow-sm p-3 mb-2 bg-white rounded">Sombra pequena</div>
-             
-            </div>
-            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-            <div class="tab-pane fade" id="v-pills-settings1" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-            <div class="tab-pane fade" id="v-pills-settings2" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
-        </div>
-        </div>
-      </div>
+  <table class="table table-hover">
+   
+    <tbody >
+      <tr *ngFor="let item of listaAtivos" style="width: 300px;">
+        <td [ngSwitch]="item.tipoAtivoId" class="text-center">Imagem <br>
+          <span class="badge badge-secondary" *ngSwitchCase="1">FII</span>
+          <span class="badge badge-warning" *ngSwitchCase="2">B3</span>
+          <span class="badge badge-warning" *ngSwitchCase="12">B3</span>
+          <span class="badge badge-info" *ngSwitchCase="7">EUA - Ações</span>
+          <span class="badge badge-info" *ngSwitchCase="9">EUA - ETF</span>
+          <span class="badge badge-info" *ngSwitchCase="11">EUA - REIT</span>
+          <span class="badge badge-info" *ngSwitchCase="8">EUA - CRIPTO</span>
+          <span class="badge badge-success" *ngSwitchDefault>Renda Fixa</span>
+        </td>
+        <td  style="width: 600px;"> 
+          {{item.nomeAtivo}} <br>
+          {{item.nomeAtivoCompleto}} 
+        </td>
+        <td> Quantidade: {{item.qtdCotas}} <br> Setor: {{item.seguimentoAtivo}}</td>
+        <td> <div class="float-right">
+          <a href="/evolucaoAtivo/{{item.id}}" class="btn btn-outline-secondary btn-sm mr-3">
+            <fa-icon style="font-size: 20px;" [icon] ="faChartLine"></fa-icon>
+          </a>
+          <a href="/aporteAtivo/{{item.id}}" class="btn btn-outline-success btn-sm mr-3">
+            <fa-icon style="font-size: 20px;" [icon] ="faCartPlus"></fa-icon>
+          </a>
+          <a href="/vendaAtivo/{{item.id}}" class="btn btn-outline-danger btn-sm mr-3">
+            <fa-icon style="font-size: 20px;" [icon] ="faRocket"></fa-icon>
+          </a>
+          <a href="/rendimentoAtivo/{{item.id}}" class="btn btn-outline-info btn-sm mr-3">
+            <fa-icon style="font-size: 20px;" [icon] ="faCartArrowDown"></fa-icon>
+          </a>
+        </div></td>
+       
+      </tr>
+     
+      
+    </tbody>
+  </table>
+  <ngb-pagination 
+  [collectionSize]="TotalLista"
+  (pageChange)="pageChange($event)"
+  [maxSize]="5"
+  [rotate]="true"
+  [ellipses]="false"
+  [pageSize]="PageSize"
+  [boundaryLinks]="true">
+</ngb-pagination>     
+   
     
-
 </div>

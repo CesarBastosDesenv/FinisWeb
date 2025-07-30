@@ -1,0 +1,65 @@
+<section>
+    <div class="container-md">
+        <h3>Despesas Recorrentes</h3>
+        <hr>
+        <div class="shadow-lg p-3 mb-5 bg-white rounded">
+        <form >
+                                              <div class="row"> 
+                                            
+                                                                 
+                                                                  <div class="col-sm-6">
+                                                                  <label><b>Despesa</b></label>
+                                                                  <input type="text" name="Despesa" class="form-control"  required>
+                                                                  </div>
+                                                                  <div class="col-sm-2">
+                                                                   <label><b>Valor</b></label>
+                                                                  <input type="text" name="Valor" class="form-control" id="valor_Compra" >
+                                                                  </div>
+                                                                   <div class="col-sm-2">
+                                                                   <label><b>Dia de Vencimento</b></label>
+                                                                  <input type="text" name="DiaVencimento" class="form-control" id="valor_Cota" >
+                                                                  </div>
+                                                                  <div class="col-sm-2">
+                                                                   <label><b>Agenda?</b></label>
+                                                                   <select class="form-control" name="Agenda">
+                                                                    <option value="0">Não</option>
+                                                                    <option Value="1">Sim</option>
+                                                                   </select>
+                                                                  </div>
+                                                                  
+                                                                  <div class="col-sm-12 my-3">
+                                                                        <button type="submit" class="btn btn-Secondary form-control bg-custom-2">Salvar</button>  
+                                                                  </div>
+                                                                  
+                                                   </div><!-- Fim row form-->
+                                              </form>
+                                           
+    <table id="empresas" class="table display responsive nowrap" style="width:100%"  >
+        <thead>
+            <tr>
+                <th>Opções</th>
+                <th>Despesa</th>
+                <th>Valor</th>
+                <th>Dia de Vencimento</th>
+                <th>Mostrar na Agenda?</th>
+               
+            </tr>
+        </thead>
+   
+        <tr>
+            <td>
+                <a href="#" class="btn btn-info">Editar</a>
+                <a href="# " class="btn btn-danger">Excluir</a>
+                
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+            </td>
+            
+        </tr>
+  
+    </table>
+    </div>
+

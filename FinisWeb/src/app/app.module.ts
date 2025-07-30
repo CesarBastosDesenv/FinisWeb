@@ -24,8 +24,7 @@ import { RendimentoAtivoComponent } from './pages/carteira/rendimento-ativo/rend
 import { VisualizarDespesasRecorrentesComponent } from './pages/despesas/despesasRecorrentes/visualizar-despesas-recorrentes/visualizar-despesas-recorrentes.component';
 import { EditarDespesasRecorrentesComponent } from './pages/despesas/despesasRecorrentes/editar-despesas-recorrentes/editar-despesas-recorrentes.component';
 import { VisualizarContasComponent } from './pages/despesas/contas/visualizar-contas/visualizar-contas.component';
-import { CadastroContasComponent } from './modals/cadastro-contas/cadastro-contas.component';
-import { BsModalService } from 'ngx-bootstrap/modal';
+
 
 
 
@@ -49,7 +48,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
     VisualizarDespesasRecorrentesComponent,
     EditarDespesasRecorrentesComponent,
     VisualizarContasComponent,
-    CadastroContasComponent,
+    
 
   ],
   imports: [
@@ -64,7 +63,7 @@ import { BsModalService } from 'ngx-bootstrap/modal';
     ReactiveFormsModule,
     
   ],
-  providers: [BsModalService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

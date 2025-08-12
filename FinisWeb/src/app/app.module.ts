@@ -26,6 +26,7 @@ import { EditarDespesasRecorrentesComponent } from './pages/despesas/despesasRec
 import { VisualizarContasComponent } from './pages/despesas/contas/visualizar-contas/visualizar-contas.component';
 import { CadastrarContasComponent } from './pages/despesas/contas/cadastrar-contas/cadastrar-contas.component';
 import { CadastrarMovimentacaoComponent } from './pages/despesas/contas/cadastrar-movimentacao/cadastrar-movimentacao.component';
+import { NgChartsModule } from 'ng2-charts';
 
 
 
@@ -56,7 +57,6 @@ import { CadastrarMovimentacaoComponent } from './pages/despesas/contas/cadastra
   ],
   imports: [
     BrowserModule,
-    
     AppRoutingModule,
     FontAwesomeModule,
     NgbModule,
@@ -64,6 +64,7 @@ import { CadastrarMovimentacaoComponent } from './pages/despesas/contas/cadastra
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    NgChartsModule,
     
     
   ],

@@ -1,10 +1,10 @@
   
     <div class="row">
-        <div class="col-sm-4 my-3" > 
+        <div class="col-sm-4 my-2" > 
             <h3 >Contas do mês corrente</h3>
            
         </div>
-        <div class="col-sm-8 my-3">
+        <div class="col-sm-8 my-2">
             <div class="float-right">
                  
                ver o que colocar
@@ -12,49 +12,64 @@
          
         </div>
     </div>
-    <hr>
+    
     <div class="row">
-        <div class="col-sm-3 my-3 text-center" > 
+        <div class="col-sm-3 my-2 text-center" > 
             <div class="card">
-                <h5 class="card-header">Receita Mensal</h5>
+                <h5 class="card-header">Receita Mensal + 10.000,00 </h5>
                 <div class="card-body">
-                  <h3 class="card-title text-success"> + 10.000,00</h3>
-                  [Colocar um gráfico com todas as dispesas]
+                  <!--<h3 class="card-title text-success"> + 10.000,00</h3> -->
+                  <canvas baseChart width="450" height="200"
+                      [type]="'pie'" 
+                      [data]="pieChartData" 
+                      [options]="pieChartOptions" 
+                      [legend]="pieChartLegend">
+                  </canvas>
                 </div>
               </div>
         </div>
-        <div class="col-sm-3 my-3 text-center" > 
+        <div class="col-sm-3 my-2 text-center" > 
             <div class="card">
-                <h5 class="card-header">Despesa Mensal</h5>
+                <h5 class="card-header">Despesa Mensal - 5.000,00</h5>
                 <div class="card-body">
-                    <h3 class="card-title text-success"> - 5.000,00</h3>
-                    [Colocar um gráfico com todas as dispesas]
+                   <!-- <h3 class="card-title text-success"> - 5.000,00</h3> -->
+                    <canvas baseChart width="450" height="200"
+                    [type]="'pie'" 
+                    [data]="pieChartData1" 
+                    [options]="pieChartOptions1" 
+                    [legend]="pieChartLegend">
+                    </canvas>
                 </div>
               </div>
             </div>
-            <div class="col-sm-3 my-3 text-center" > 
+            <div class="col-sm-3 my-2 text-center" > 
                 <div class="card">
                     <h5 class="card-header">Saldo</h5>
                     <div class="card-body">
                         <h3 class="card-title text-success"> + 5.000,00</h3>
                         
-                          <fa-icon style="font-size: 20px;" [icon] ="faMoneyBillWave"></fa-icon>
+                        <img src="/assets/imgs/Bolsa.png" alt="bolsa de dinheiro" width="150" height="158">
                      
                     </div>
                   </div>
                 </div>
-                <div class="col-sm-3 my-3 text-center" > 
+                <div class="col-sm-3 my-2 text-center" > 
                     <div class="card">
                         <h5 class="card-header">Receita vs Depesa</h5>
                         <div class="card-body">
-                        Colocar um grafico de linha
+                        <canvas baseChart width="450" height="200"
+                          [type]="'bar'"
+                          [data]="barChartData"
+                          [options]="barChartOptions"
+                          [legend]="barChartLegend">
+                        </canvas>
                         </div>
                       </div>
                     </div>
     </div>        
 
     <div class="row">
-        <div class="col-sm-6 my-3" > 
+        <div class="col-sm-6 my-1" > 
             <div class="shadow p-3 mb-5 bg-white rounded">
                 
                 <div class="row">
@@ -107,7 +122,7 @@
     </ngb-pagination>
             </div>
         </div>  
-        <div class="col-sm-6 my-3" > 
+        <div class="col-sm-6 my-1" > 
             <div class="shadow p-3 mb-5 bg-white rounded">
                 <div class="row">
                     <div class="col-sm-4" > 

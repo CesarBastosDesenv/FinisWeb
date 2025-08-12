@@ -1,9 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//dashboard
 import { DashboardComponent } from './pages/dashboard/dashboard/dashboard.component';
 import { VisualizarCarteiraComponent } from './pages/carteira/visualizar-carteira/visualizar-carteira.component';
-//Administracao
 import { VisualizarTipoComponent } from './pages/administracao/finis/tipos/visualizar-tipo/visualizar-tipo.component';
 import { CadastroTipoComponent } from './pages/administracao/finis/tipos/cadastro-tipo/cadastro-tipo.component';
 import { EditarTipoComponent } from './pages/administracao/finis/tipos/editar-tipo/editar-tipo.component';
@@ -16,6 +14,8 @@ import { RendimentoAtivoComponent } from './pages/carteira/rendimento-ativo/rend
 import { VisualizarDespesasRecorrentesComponent } from './pages/despesas/despesasRecorrentes/visualizar-despesas-recorrentes/visualizar-despesas-recorrentes.component';
 import { EditarDespesasRecorrentesComponent } from './pages/despesas/despesasRecorrentes/editar-despesas-recorrentes/editar-despesas-recorrentes.component';
 import { VisualizarContasComponent } from './pages/despesas/contas/visualizar-contas/visualizar-contas.component';
+import { CadastrarContasComponent } from './pages/despesas/contas/cadastrar-contas/cadastrar-contas.component';
+import { CadastrarMovimentacaoComponent } from './pages/despesas/contas/cadastrar-movimentacao/cadastrar-movimentacao.component';
 
 const routes: Routes = [
   //dashboard
@@ -34,6 +34,9 @@ const routes: Routes = [
   { path: 'despesasRecorrentes', component: VisualizarDespesasRecorrentesComponent },
   { path: 'editarDespesasRecorrentes/:id', component: EditarDespesasRecorrentesComponent },
   { path: 'visualizarContas', component: VisualizarContasComponent },
+  { path: 'cadastrarContas', component: CadastrarContasComponent },
+  { path: 'cadastrarMovimentacao', component: CadastrarMovimentacaoComponent },
+
 
   //Administracao
   { path: 'visualizarTipo', component: VisualizarTipoComponent },

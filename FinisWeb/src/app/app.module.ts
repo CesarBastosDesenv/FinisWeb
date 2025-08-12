@@ -24,6 +24,8 @@ import { RendimentoAtivoComponent } from './pages/carteira/rendimento-ativo/rend
 import { VisualizarDespesasRecorrentesComponent } from './pages/despesas/despesasRecorrentes/visualizar-despesas-recorrentes/visualizar-despesas-recorrentes.component';
 import { EditarDespesasRecorrentesComponent } from './pages/despesas/despesasRecorrentes/editar-despesas-recorrentes/editar-despesas-recorrentes.component';
 import { VisualizarContasComponent } from './pages/despesas/contas/visualizar-contas/visualizar-contas.component';
+import { CadastrarContasComponent } from './pages/despesas/contas/cadastrar-contas/cadastrar-contas.component';
+import { CadastrarMovimentacaoComponent } from './pages/despesas/contas/cadastrar-movimentacao/cadastrar-movimentacao.component';
 
 
 
@@ -31,11 +33,8 @@ import { VisualizarContasComponent } from './pages/despesas/contas/visualizar-co
 @NgModule({
   declarations: [
     AppComponent,
-    //dashboard
     DashboardComponent,
-    //Carteira
     VisualizarCarteiraComponent,
-    //Administracao
     CadastroTipoComponent,
     EditarTipoComponent,
     VisualizarTipoComponent,
@@ -48,6 +47,10 @@ import { VisualizarContasComponent } from './pages/despesas/contas/visualizar-co
     VisualizarDespesasRecorrentesComponent,
     EditarDespesasRecorrentesComponent,
     VisualizarContasComponent,
+    CadastrarContasComponent,
+    CadastrarMovimentacaoComponent,
+    
+    
     
 
   ],
@@ -61,6 +64,7 @@ import { VisualizarContasComponent } from './pages/despesas/contas/visualizar-co
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    
     
   ],
   providers: [],

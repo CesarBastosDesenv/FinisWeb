@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="shadow p-3 mb-5 my-3 bg-white rounded">
+    <div class="row">
+        <div class="col-sm-8 my-3" > 
+            <h3 >Cadastro de Conta</h3>
+        </div>
+        <div class="col-sm-4 my-3">
+            <div class="float-right">
+                <a href="/visualizarContas" class="btn btn-outline-secondary btn-sm">
+                    <fa-icon style="font-size: 18px;" [icon] ="faArrowAltCircleLeft"></fa-icon> Voltar
+                </a>
+            </div>    
+        </div>
+    </div>
+    <hr>
+     <form [formGroup]="form" >
+        <div class="row">
+           
+                <div class="col-sm-3"> 
+                    <label>Nome da conta</label>
+                    <input type="text" class="form-control"  formControlName="nomeConta">
+                </div>
+                <div class="col-sm-3"> 
+                    <label >Conta Pai</label>
+                    <select class="form-control" formControlName="contaPaiId" >
+                      <option value="1">Nubank</option>
+                      <option value="2">Caixa Econômica</option>
+                      <option value="3">C6 Bank</option>
+                      <option value="4">Itaú</option>
+                      <option value="5">Inter</option>
+                    </select>
+                </div>
+                <div class="col-sm-3 " > 
+                    <label>Saldo</label>
+                    <input type="text" class="form-control"  formControlName="valorSaldo">
+                </div>
+                <div class="col-sm-3"> 
+                    <label>Data Cadastro</label>
+                    <input type="date" class="form-control"  formControlName="dataCriacao">
+                </div>
+                <div class="col-sm-3"> 
+                    <label>Instituiçao</label>
+                    <input type="text" class="form-control"  formControlName="instituicao">
+                </div>
+                
+               
+        </div>
+                <div class="my-3"> 
+                 <button type="button" class="btn btn-outline-secondary" (click)="salvarDados()"  >Salvar</button>
+                </div>
+         
+       
+    </form>
+</div>
+</div>
+
+

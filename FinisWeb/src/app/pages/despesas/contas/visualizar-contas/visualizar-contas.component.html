@@ -60,15 +60,16 @@
                 <div class="row">
                     <div class="col-sm-4" > 
                         <h6>Contas</h6>
-                       
                     </div>
                     <div class="col-sm-8">
                         <div class="float-right">
                              
-                           <button class="btn btn-outline-secondary" onclick="abrirModal()"> Cadastrar Conta</button>
+                           <a [routerLink]="['/cadastrarContas']"  class="btn btn-outline-secondary btn-sm" > Cadastrar Conta</a>
                     
                         </div>
                   
+                       
+
                 </div>
              
             </div>
@@ -116,7 +117,7 @@
                     <div class="col-sm-8">
                         <div class="float-right">
                              
-                            <a href="/visualizarCarteira" class="btn btn-outline-secondary btn-sm ">
+                            <a href="/cadastrarMovimentacao" class="btn btn-outline-secondary btn-sm ">
                                 Adicionar movimentações
                             </a>
                     
@@ -131,31 +132,33 @@
                     <thead>
                       <tr>
                         <th scope="col">#</th>
-                        <th scope="col">Primeiro</th>
-                        <th scope="col">Último</th>
-                        <th scope="col">Nickname</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Conta</th>
+                        <th scope="col">Valor</th>
+                        <th scope="col">Tipo</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>mdo</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>fat</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td colspan="2">Larry the Bird</td>
-                        <td>twitter</td>
+                      <tr *ngFor="let item of listamovimentacao">
+                        <th>{{item.flMovimentacao}}</th>
+                        <th>{{item.dtMovimentacao}}</th>
+                        <td>{{item.descricaoMovimentacao}}</td>
+                        <td>{{item.contaId}}</td>
+                        <td>{{item.valorMovimentacao}}</td>
+                        <td>{{item.tipoGasto}}</td>
                       </tr>
                     </tbody>
                   </table>
+                  <ngb-pagination 
+      [collectionSize]="TotalLista"
+      (pageChange)="pageChange1($event)"
+      [maxSize]="5"
+      [rotate]="true"
+      [ellipses]="false"
+      [pageSize]="PageSize"
+      [boundaryLinks]="true">
+    </ngb-pagination>
             </div>
         </div>    
     </div>    

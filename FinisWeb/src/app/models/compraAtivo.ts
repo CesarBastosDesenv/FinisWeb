@@ -18,17 +18,17 @@ export class compraAtivo {
         if (data == null || data == undefined) { data = {}; }
         
     this.id = data.id;
-    this.ativoId = data.AtivoId;
-    this.nomeAtivo = data.NomeAtivo;
-    this.dtCompra = data.DtCompra;
-    this.valorCompra = data.ValorCompra;
-    this.estimativaVenda = data.EstimativaVenda;
-    this.valorCota = data.ValorCota;
-    this.qtdCotas = data.QtdCotas;
-    this.flVendido = data.FlVendido;
-    this.flBolsa = data.FlBolsa;
-    this.corretora = data.Corretora;
-    this.estrategia = data.Estrategia;
+    this.ativoId = data.ativoId;
+    this.nomeAtivo = data.nomeAtivo;
+    this.dtCompra = data.dtCompra;
+    this.valorCompra = data.valorCompra;
+    this.estimativaVenda = data.estimativaVenda;
+    this.valorCota = data.valorCota;
+    this.qtdCotas = data.qtdCotas;
+    this.flVendido = data.flVendido;
+    this.flBolsa = data.flBolsa;
+    this.corretora = data.corretora;
+    this.estrategia = data.estrategia;
     this.pageNumber = data.pageNumber;
     this.pageSize = data.pageSize;
     }

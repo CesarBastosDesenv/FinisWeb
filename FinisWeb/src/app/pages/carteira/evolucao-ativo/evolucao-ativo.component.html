@@ -3,7 +3,7 @@
         <div class="col-sm-12 my-3">
             <div class="row">
                 <div class="col-sm-6">
-                    <h3 class="my-3"> Rendimentos do ativo <b>[Ativo] </b> Ano [Ano] </h3>
+                    <h3 class="my-3"> Rendimentos do ativo <b>{{listaAtivoPorId.nomeAtivo}} </b> Ano {{ano}} </h3>
                 </div>
                 <div class="col-sm-6">
                     <div class="float-right">
@@ -30,46 +30,33 @@
                 <div class="col-9">
                     <div class="tab-content" id="v-pills-tabContent">
                         <div class="tab-pane fade show active " id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                            <form >
+                            <form [formGroup]="form" >
                                 <div class="row">
                                     <div class="shadow p-3 mb-5 bg-white rounded">
                                          <div class="col-sm-12">
                                             <label>Descrição</label>
-                                            <textarea class="form-control"  rows="2"></textarea>
+                                            <textarea class="form-control"  formControlName="descricao" rows="2"></textarea>
                                           </div>
                                           <div class="my-3"> 
-                                            <button type="button" class="btn btn-outline-secondary" >Salvar</button>
+                                            <button type="button" class="btn btn-outline-secondary" (click)="salvarDados()" >Salvar</button>
                                            </div>
                                     </div>       
                                 </div>
                             </form>
                             <table class="table table-hover">
                                 <thead>
-                                  <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Primeiro</th>
-                                    <th scope="col">Último</th>
-                                    <th scope="col">Nickname</th>
+                                  <tr >
+                                    <th scope="col">Data</th>
+                                    <th scope="col">Descrição</th>
+                                    
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>mdo</td>
+                                  <tr *ngFor="let item of listaHistoricoAtivo">
+                                    <th>{{item.dtHistorico}}</th>
+                                    <td>{{item.descricao}}</td>
                                   </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>fat</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>twitter</td>
-                                  </tr>
+                                 
                                 </tbody>
                               </table>
                         </div>
@@ -77,35 +64,42 @@
                             <table class="table table-hover">
                                 <thead>
                                   <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">Primeiro</th>
-                                    <th scope="col">Último</th>
-                                    <th scope="col">Nickname</th>
+                                    <th scope="col">Corretora</th>
+                                    <th scope="col">Cotas</th>
+                                    <th scope="col">Mês</th>
+                                    <th scope="col">Ano</th>
+                                    <th scope="col">Valor</th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>mdo</td>
+                                  <tr *ngFor="let item of listaRendimento">
+                                    <th scope="row">{{item.corretora}}</th>
+                                    <td>{{item.qtdCotas}}</td>
+                                    <td>{{item.mesRendimento}}</td>
+                                    <td>{{item.anoRendimento}}</td>
+                                    <td>{{item.valorRendimento}}</td>
                                   </tr>
-                                  <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>fat</td>
-                                  </tr>
-                                  <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>twitter</td>
-                                  </tr>
+                                  
                                 </tbody>
                               </table>
+                              <ngb-pagination 
+                                [collectionSize]="TotalLista"
+                                (pageChange)="pageChange($event)"
+                                [maxSize]="5"
+                                [rotate]="true"
+                                [ellipses]="false"
+                                [pageSize]="PageSize"
+                                [boundaryLinks]="true">
+                             </ngb-pagination>     
+   
                         </div>
                         <div class="tab-pane fade " id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
-                             [Grafico]
+                            <canvas baseChart width="950" height="600"
+                          [type]="'bar'"
+                          [data]="barChartData"
+                          [options]="barChartOptions"
+                          [legend]="barChartLegend">
+                        </canvas>
                         </div>
                         <div class="tab-pane fade " id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                             <div class="row mbr-justify-content-center">

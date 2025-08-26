@@ -29,6 +29,7 @@ export class NovoAtivoComponent implements OnInit{
       valorCota: new FormControl('',[Validators.required,Validators.maxLength(30)]),
       corretora: new FormControl('',[Validators.required,Validators.maxLength(30)]),
       estrategia: new FormControl('',[Validators.required,Validators.maxLength(30)]),
+      valorCompra: new FormControl('',[Validators.required,Validators.maxLength(30)]),
     })
   }
 

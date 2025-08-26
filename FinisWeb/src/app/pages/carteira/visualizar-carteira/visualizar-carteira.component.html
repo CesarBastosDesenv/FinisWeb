@@ -23,7 +23,7 @@
    
     <tbody >
       <tr *ngFor="let item of listaAtivos" style="width: 300px;">
-        <td [ngSwitch]="item.tipoAtivoId" class="text-center">Imagem <br>
+        <td [ngSwitch]="item.tipoAtivoId" class="text-center"><img src="/assets/imgs/ativos/{{item.imagem}}" alt="bolsa de dinheiro" width="100" height="30"> <br>
           <span class="badge badge-secondary" *ngSwitchCase="1">FII</span>
           <span class="badge badge-warning" *ngSwitchCase="2">B3</span>
           <span class="badge badge-warning" *ngSwitchCase="12">B3</span>

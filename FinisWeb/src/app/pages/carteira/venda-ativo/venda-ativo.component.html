@@ -1,1 +1,53 @@
-<p>venda-ativo works!</p>
+<div class="container">
+    <div class="shadow-lg p-3 mb-5 my-4 bg-white rounded">
+        <div class="row">
+            <div class="col-sm-8" > 
+                <h3 >Venda de ativos</h3>
+            </div>
+            <div class="col-sm-4 ">
+                <div class="float-right">
+                    <a href="/visualizarCarteira" class="btn btn-outline-secondary btn-sm">
+                        <fa-icon style="font-size: 15px;" [icon] ="faArrowAltCircleLeft"></fa-icon> Voltar
+                    </a>
+                </div>    
+            </div>
+        </div>
+        <hr>
+        <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th class="col-2 text-center" > Ações </th>
+                <th class="col-2"> Ativo </th>
+                <th class="col-2"> Valores </th>
+                <th class="col-2"> Cotas </th>
+                <th class="col-2"> Data Compra </th>
+                <th class="col-2"> Situação </th>
+                
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of listaCompraAtivos" >
+                <td class="text-center ">
+                  <a [routerLink]="" class="btn btn-outline-success btn-sm m-1"> <fa-icon style="font-size: 20px;" [icon] ="faCommentDollar"></fa-icon> </a>
+                </td>
+                <td>{{item.nomeAtivo}}</td>
+                <td>{{item.valorCompra}}</td>
+                <td>{{item.qtdCotas}}</td>
+                <td>{{item.dtCompra}}</td>
+                <td>Lucro ou Prejuízo</td>
+              </tr>
+            </tbody>
+          </table>
+          <ngb-pagination 
+          [collectionSize]="TotalLista"
+          (pageChange)="pageChange($event)"
+          [maxSize]="5"
+          [rotate]="true"
+          [ellipses]="false"
+          [pageSize]="PageSize"
+          [boundaryLinks]="true">
+        </ngb-pagination>
+    </div>
+    
+  </div>
+

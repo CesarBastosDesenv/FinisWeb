@@ -6,9 +6,9 @@ import { catchError, map, Observable } from "rxjs";
     providedIn: 'root'
 })
 
-export class ativoService{
+export class rendimentoService{
     
-    apiUrl = 'http://localhost:5107/api/Ativo';
+    apiUrl = 'http://localhost:5107/api/Rendimento';
     
     httpOpitions = {
         headers: new HttpHeaders({
@@ -25,22 +25,17 @@ export class ativoService{
 
     
 
-    public CadastrarAtivo(nota: any): Observable<any>{
+    public CadastrarRendimento(nota: any): Observable<any>{
         return this.httpClient.post<any>(this.apiUrl, nota, this.httpOpitions);
     }
    
-    public EditarAtivo(nota: any): Observable<any> {
+    public EditarRendimento(nota: any): Observable<any> {
         return this.httpClient.put<any>(this.apiUrl, nota, this.httpOpitions);
     }
 
-   
-    public ListarAtivoSemParam(): Observable<any> {
-        return this.httpClient.get(this.apiUrl);
-    }
-
-    public ListarAtivo(params: any): Observable<any> {
+    public ListarRendimento(params: any): Observable<any> {
         return new Observable<any>(observer => {            
-            this.httpClient.get(this.apiUrl + '/' + 'all' , {params: params})
+            this.httpClient.get(this.apiUrl, {params: params})
             .pipe(
                 catchError((err) => {
                 observer.error(err);
@@ -56,7 +51,7 @@ export class ativoService{
         });
     }
 
-    public ListarAtivoPorId(id: any): Observable<any> {
+    public ListarRendimentoPorId(id: any): Observable<any> {
                  
             return this.httpClient.get(this.apiUrl + '/' + id)
             .pipe(
@@ -66,21 +61,21 @@ export class ativoService{
             );
         }
 
-     public ListarAtivosPorTipo(params: any): Observable<any> {
-        return new Observable<any>(observer => {            
-            this.httpClient.get(this.apiUrl + '/' + params.ParamId + '/list', {params: params})
-            .pipe(
-                catchError((err) => {
-                observer.error(err);
-                throw err;
-            }),
-            map(response => {
-                return response;
-            })
-            ).subscribe(response => {
-                observer.next(response);
-                observer.complete();
-            });            
-        });
-    }
+        public ListarRendimentoPorIdParams(params: any): Observable<any> {
+            return new Observable<any>(observer => {            
+                this.httpClient.get(this.apiUrl + '/' + params.ParamId + '/list', {params: params})
+                .pipe(
+                    catchError((err) => {
+                    observer.error(err);
+                    throw err;
+                }),
+                map(response => {
+                    return response;
+                })
+                ).subscribe(response => {
+                    observer.next(response);
+                    observer.complete();
+                });            
+            });
+        }
  }

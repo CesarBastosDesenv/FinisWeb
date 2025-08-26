@@ -1,1 +1,83 @@
-<p>rendimento-ativo works!</p>
+<div class="container">
+    <div class="shadow-lg p-3 mb-5 bg-white rounded my-3">  
+          <div class="row">
+        <div class="col-sm-8 my-3" > 
+            <h3 >Cadastro de rendimentos</h3>
+        </div>
+        <div class="col-sm-4 my-3">
+            <div class="float-right">
+                <a href="/visualizarCarteira" class="btn btn-outline-secondary btn-sm">
+                    <fa-icon style="font-size: 18px;" [icon] ="faArrowAltCircleLeft"></fa-icon> Voltar
+                </a>
+            </div>    
+        </div>
+    </div>
+    <hr>
+     <form [formGroup]="form" >
+        <div class="row">
+            
+                <div class="col-sm-6"> 
+                    <label>Mês</label>
+                    <select class="form-control" formControlName="mesRendimento">
+                    <option>Janeiro</option>
+                    <option>Fevereiro</option>
+                    <option>Marco</option>
+                    <option>Abril</option>
+                    <option>Maio</option>
+                    <option>Junho</option>
+                    <option>Julho</option>
+                    <option>Agosto</option>
+                    <option>Setembro</option>
+                    <option>Outubro</option>
+                    <option>Novembro</option>
+                    <option>Dezembro</option>
+                    </select>
+                </div>
+                <div class="col-sm-6"> 
+                    <label>Ano</label>
+                    <select class="form-control" formControlName="anoRendimento">
+                    <option>2021</option>
+                    <option>2024</option>
+                    <option>2025</option>
+                    <option>2026</option>
+                    </select>
+                </div>
+                <div class="col-sm-3"> 
+                    <label>Corretora</label>
+                    <select class="form-control" formControlName="corretora">
+                    <option>Avenue</option>
+                    <option>Binance</option>
+                    <option>Inter-EUA</option>
+                    <option>Inter-BRA</option>
+                    <option>Rico</option>
+                    <option>C6</option>
+                    <option>Nubank</option>
+                    </select>
+                </div>
+            
+            
+                <div class="col-sm-3"> 
+                    <label>Rendimento</label>
+                    <input type="text" class="form-control"  formControlName="valorRendimento">
+                </div>
+                <div class="col-sm-3"> 
+                    <label>Quantidade Cotas</label>
+                    <input type="text" class="form-control"  formControlName="qtdCotas">
+                </div>
+                <div class="col-sm-3"> 
+                    <label>Data Rencebimento</label>
+                    <input type="date" class="form-control"  formControlName="dtRendimento">
+                </div>
+               
+         
+               
+                <div class="col-sm-12 my-3"> 
+                 <button type="button" class="btn btn-outline-secondary" (click)="salvarDados()"   >Salvar</button>
+                </div>
+          
+           
+        </div>
+    </form>
+</div>
+</div>
+

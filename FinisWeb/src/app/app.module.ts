@@ -12,7 +12,7 @@ import { VisualizarCarteiraComponent } from './pages/carteira/visualizar-carteir
 import { CadastroTipoComponent } from './pages/administracao/finis/tipos/cadastro-tipo/cadastro-tipo.component';
 import { EditarTipoComponent } from './pages/administracao/finis/tipos/editar-tipo/editar-tipo.component';
 import { VisualizarTipoComponent } from './pages/administracao/finis/tipos/visualizar-tipo/visualizar-tipo.component';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NovoAtivoComponent } from './pages/carteira/novo-ativo/novo-ativo.component';
@@ -68,7 +68,7 @@ import { NgChartsModule } from 'ng2-charts';
     
     
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

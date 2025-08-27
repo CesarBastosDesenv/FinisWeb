@@ -27,6 +27,7 @@ import { VisualizarContasComponent } from './pages/despesas/contas/visualizar-co
 import { CadastrarContasComponent } from './pages/despesas/contas/cadastrar-contas/cadastrar-contas.component';
 import { CadastrarMovimentacaoComponent } from './pages/despesas/contas/cadastrar-movimentacao/cadastrar-movimentacao.component';
 import { NgChartsModule } from 'ng2-charts';
+import { VisualizarCartoesComponent } from './pages/despesas/cartoes/visualizar-cartoes/visualizar-cartoes.component';
 
 
 
@@ -50,6 +51,7 @@ import { NgChartsModule } from 'ng2-charts';
     VisualizarContasComponent,
     CadastrarContasComponent,
     CadastrarMovimentacaoComponent,
+    VisualizarCartoesComponent,
     
     
     

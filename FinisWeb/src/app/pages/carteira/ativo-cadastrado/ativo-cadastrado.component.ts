@@ -55,17 +55,20 @@ export class AtivoCadastradoComponent implements OnInit{
   }
 
   ngOnInit(): void {
-    //Passar o conteúdo do flBolsa de acordo com o valor da corretora
+    
     this.listarAtivoSemParam();
-
+    //Passar o conteúdo do flBolsa de acordo com o valor da corretora
     this.form.get('corretora')?.valueChanges.subscribe(corretora => {
-      if (corretora === 'Inter') {
+      if (corretora === 'Inter' || corretora === 'Avenue') {
         this.form.get('flBolsa')?.setValue('Eua');
+      } else if (corretora === 'Inter-CDB' || corretora === 'C6-CDB'){
+        this.form.get('flBolsa')?.setValue('CDB');
+      } else if (corretora === 'Inter-Tesouro' || corretora === 'Rico-Tesouro'){
+        this.form.get('flBolsa')?.setValue('Tesouro');
       } else {
-        this.form.get('flBolsa')?.setValue('');
+        this.form.get('flBolsa')?.setValue('CC');
       }
     });
-
   }
 
   selectAtivo(event: any){

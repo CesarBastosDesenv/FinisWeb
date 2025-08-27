@@ -2,80 +2,68 @@
     <div class="shadow p-3 mb-5 my-3 bg-white rounded">
     <div class="row">
         <div class="col-sm-8 my-3" > 
-            <h3 >Aporte de ativos</h3>
+            <h3 >Aporte de ativos {{listaAtivoPorId.nomeAtivo}} </h3>
         </div>
         <div class="col-sm-4 my-3">
             <div class="float-right">
                 <a href="/visualizarCarteira" class="btn btn-outline-secondary btn-sm">
-                    
+                    <fa-icon style="font-size: 18px;" [icon] ="faArrowAltCircleLeft"></fa-icon> Voltar
                 </a>
             </div>    
         </div>
     </div>
+  
     <hr>
-     <form  >
-        <div class="row">
-           
-                <div class="col-sm-3"> 
-                    <label>Nome Ativo</label>
-                    <input type="text" class="form-control"  formControlName="nomeAtivo">
-                </div>
-                <div class="col-sm-3"> 
-                    <label>Nome Ativo Completo</label>
-                    <input type="text" class="form-control"  formControlName="nomeAtivoCompleto">
-                </div>
-                <div class="col-sm-3"> 
-                    <label>Seguimento Ativo</label>
-                    <input type="text" class="form-control"  formControlName="seguimentoAtivo">
-                </div>
-                <div class="col-sm-3"> 
-                    <label>Data Cadastro</label>
-                    <input type="date" class="form-control"  formControlName="dtCadastro">
-                </div>
-                <div class="col-sm-3"> 
-                    <label>Imagem</label>
-                    <input type="text" class="form-control"  formControlName="imagem">
-                </div>
-                <div class="col-sm-3"> 
-                    <label >Tipo do Ativo</label>
-                    <select class="form-control" formControlName="tipoAtivoId" >
-                      <option value="1">FII</option>
-                      <option value="2">AÇÕES</option>
-                      <option value="3">POUPANÇA</option>
-                      <option value="4">TESOURO DIRETO</option>
-                      <option value="5">EMERGÊNCIA</option>
-                      <option value="6">OPORTUNIDADES</option>
-                      <option value="7">AÇÕES EUA</option>
-                      <option value="8">CRIPTOMOEDAS</option>
-                      <option value="9">EFT EUA</option>
-                      <option value="10">CDB</option>
-                      <option value="11">REIT</option>
-                      <option value="12">ETF B3</option>
-                    </select>
-                </div>
-                <div class="col-sm-3"> 
-                    <label>Quantidade de cotas</label>
-                    <input type="text" class="form-control"  formControlName="qtdCotas">
-                </div>
-                <div class="col-sm-3"> 
-                    <label>Alvo</label>
-                    <input type="text" class="form-control"  formControlName="estimativaVenda">
-                </div>
-                <div class="col-sm-3"> 
-                    <label>Valor da Cota</label>
-                    <input type="text" class="form-control"  formControlName="valorCota">
-                </div>
-                <div class="col-sm-3"> 
-                    <label>Corretora</label>
-                    <input type="text" class="form-control"  formControlName="corretora">
-                </div>
-                <div class="col-sm-3"> 
-                    <label>Estratégia</label>
-                    <input type="text" class="form-control"  formControlName="estrategia">
-                </div>
+
+    <p>Nome do Ativo: {{ listaAtivoPorId.nomeAtivo }}</p>
+     <form [formGroup]="form" >
+        <div class="row">  
+            <div class="col-sm-3"> 
+                <label>Nome do Ativo</label>
+                <input type="text" class="form-control"  formControlName="nomeAtivo" [readonly]="true" >
+            </div> 
+            <div class="col-sm-3"> 
+                <label>Data Compra</label>
+                <input type="date" class="form-control"  formControlName="dtCompra">
+            </div>
+            <div class="col-sm-3"> 
+                <label >Estratégia</label>
+                <select class="form-control form-select" formControlName="estrategia" >
+                  <option>Crescimento</option>
+                  <option>Dividendos</option>
+                </select>
+            </div>
+            <div class="col-sm-3"> 
+                <label >Corretora</label>
+                <select class="form-control form-select" formControlName="corretora" >
+                  <option>Inter</option>
+                  <option>Inter-CDB</option>
+                  <option>Inter-Tesouro</option>
+                  <option>Inter-CC</option>
+                  <option>Avenue</option>
+                  <option>Rico-Tesouro</option>
+                  <option>C6-CDB</option>
+                </select>
+            </div>
+            <div class="col-sm-3"> 
+                <label>Valor da Compra</label>
+                <input type="text" class="form-control"  formControlName="valorCompra">
+            </div>
+            <div class="col-sm-3"> 
+                <label>Valor da Cota</label>
+                <input type="text" class="form-control"  formControlName="valorCota">
+            </div>
+            <div class="col-sm-3"> 
+                <label>Alvo</label>
+                <input type="text" class="form-control"  formControlName="estimativaVenda" >
+            </div> 
+            <div class="col-sm-3"> 
+                <label>Quantidade de cotas</label>
+                <input type="text" class="form-control"  formControlName="qtdCotas">
+            </div>
         </div>
                 <div class="my-3"> 
-                 <button type="button" class="btn btn-outline-secondary"  >Salvar</button>
+                 <button type="button" class="btn btn-outline-secondary" (click)="salvarDados()" >Salvar</button>
                 </div>
          
        

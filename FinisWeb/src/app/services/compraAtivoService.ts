@@ -45,4 +45,6 @@ export class compraAtivoService{
         return this.httpClient.post<any>(this.apiUrl, nota, this.httpOpitions);
     }
 
+   
+
 }
